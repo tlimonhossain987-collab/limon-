@@ -1,0 +1,908 @@
+
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#10152c">
+<meta name="description" content="Limon Digital Service - বিভিন্ন ধরনের ডিজিটাল সার্ভিস, ওয়েবসাইট তৈরি, ভিডিও এডিটিং ও গ্রাফিক্স ডিজাইন।">
+<title>Limon Digital Service</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#0c1022;
+    color:#fff;
+    font-family:'Hind Siliguri',sans-serif;
+    min-height:100vh;
+}
+
+.app{
+    width:100%;
+    max-width:560px;
+    min-height:100vh;
+    margin:auto;
+    background:#10152c;
+    overflow:hidden;
+    position:relative;
+}
+
+.topbar{
+    padding:17px 19px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:#151c38;
+    border-bottom:1px solid #293253;
+}
+
+.brand{
+    font-family:'Outfit',sans-serif;
+    font-size:17px;
+    font-weight:800;
+    color:#64e7ff;
+    letter-spacing:.5px;
+}
+
+.menu-tag{
+    font-size:12px;
+    background:#243353;
+    color:#9deeff;
+    padding:6px 11px;
+    border-radius:20px;
+}
+
+.page{
+    display:none;
+    padding:22px 17px 35px;
+    animation:appear .35s ease;
+}
+
+.page.active{
+    display:block;
+}
+
+@keyframes appear{
+    from{opacity:0;transform:translateY(12px);}
+    to{opacity:1;transform:translateY(0);}
+}
+
+.hero{
+    text-align:center;
+    padding:29px 14px;
+    background:linear-gradient(145deg,#202d55,#172342,#19204a);
+    border:1px solid #34476c;
+    border-radius:22px;
+    margin-bottom:22px;
+    box-shadow:0 10px 30px #0003;
+}
+
+.welcome{
+    font-family:'Outfit',sans-serif;
+    color:#a5efff;
+    font-size:13px;
+    letter-spacing:3px;
+    margin-bottom:13px;
+}
+
+.hero h1{
+    font-family:'Outfit',sans-serif;
+    font-size:27px;
+    font-weight:800;
+    line-height:1.3;
+    background:linear-gradient(90deg,#ffffff,#67e5ff);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.hero p{
+    color:#c6d2e9;
+    font-size:14px;
+    line-height:1.9;
+    margin-top:15px;
+}
+
+.section-title{
+    font-size:21px;
+    color:#7ce8ff;
+    margin:24px 0 12px;
+    font-weight:700;
+}
+
+.about{
+    background:#192342;
+    border:1px solid #2c3b61;
+    padding:18px;
+    border-radius:17px;
+    color:#d9e2f5;
+    font-size:15px;
+    line-height:1.95;
+}
+
+.about strong{
+    color:#72e7ff;
+}
+
+.services{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:12px;
+    margin-top:15px;
+}
+
+.service-btn{
+    border:1px solid #35466c;
+    border-radius:17px;
+    background:linear-gradient(145deg,#202e50,#192440);
+    color:white;
+    min-height:118px;
+    padding:16px 8px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    font-family:inherit;
+    font-size:14px;
+    font-weight:600;
+    text-align:center;
+    cursor:pointer;
+    transition:.25s;
+}
+
+.service-btn:active{
+    transform:scale(.96);
+    background:#263e69;
+}
+
+.service-icon{
+    font-size:29px;
+}
+
+.service-btn span:last-child{
+    line-height:1.5;
+}
+
+.contact{
+    margin-top:28px;
+    padding:22px 15px;
+    border-radius:19px;
+    text-align:center;
+    background:linear-gradient(145deg,#1d3155,#192443);
+    border:1px solid #354c75;
+}
+
+.contact h2{
+    font-family:'Outfit',sans-serif;
+    color:#7deaff;
+    font-size:23px;
+    letter-spacing:1px;
+}
+
+.contact h3{
+    font-size:19px;
+    margin-top:5px;
+}
+
+.contact p{
+    color:#cbd5e9;
+    font-size:14px;
+    line-height:1.8;
+    margin:10px 0 18px;
+}
+
+.action-btn{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:100%;
+    padding:13px;
+    margin-top:11px;
+    border-radius:12px;
+    text-decoration:none;
+    font-family:inherit;
+    font-size:15px;
+    font-weight:700;
+    border:none;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.action-btn:active{
+    transform:scale(.97);
+}
+
+.whatsapp{
+    background:#20c66b;
+    color:#fff;
+}
+
+.facebook{
+    background:#2475e9;
+    color:white;
+}
+
+.back-btn{
+    display:block;
+    width:100%;
+    padding:13px;
+    margin-bottom:21px;
+    background:#27385e;
+    border:1px solid #43577f;
+    border-radius:12px;
+    color:white;
+    font-size:15px;
+    font-family:inherit;
+    font-weight:600;
+    cursor:pointer;
+}
+
+.detail-heading{
+    text-align:center;
+    background:linear-gradient(145deg,#24365e,#182443);
+    padding:24px 14px;
+    border-radius:19px;
+    border:1px solid #3a527d;
+    margin-bottom:20px;
+}
+
+.detail-icon{
+    font-size:43px;
+    margin-bottom:9px;
+}
+
+.detail-heading h2{
+    color:#7ceaff;
+    font-size:23px;
+    line-height:1.5;
+}
+
+.detail-heading p{
+    color:#c6d5ef;
+    font-size:13px;
+    margin-top:6px;
+}
+
+.detail-content{
+    padding:19px;
+    background:#192441;
+    border:1px solid #2c3e64;
+    border-radius:17px;
+    color:#dbe4f6;
+    font-size:15px;
+    line-height:1.95;
+}
+
+.detail-content h3{
+    color:#78e8ff;
+    font-size:18px;
+    margin:15px 0 7px;
+}
+
+.detail-content h3:first-child{
+    margin-top:0;
+}
+
+.detail-content ul{
+    padding-left:21px;
+    margin:9px 0;
+}
+
+.detail-content li{
+    padding:3px 0;
+}
+
+.info-box{
+    background:#233453;
+    border-left:3px solid #5be4ff;
+    padding:13px;
+    border-radius:9px;
+    margin-top:15px;
+    font-size:14px;
+}
+
+.sample-link{
+    display:block;
+    color:#7eeaff;
+    text-decoration:none;
+    background:#22365b;
+    padding:12px;
+    border-radius:10px;
+    margin-top:9px;
+    word-break:break-word;
+    font-size:14px;
+}
+
+.detail-contact{
+    margin-top:19px;
+    padding:18px;
+    border:1px solid #30436b;
+    border-radius:16px;
+    background:#192442;
+    text-align:center;
+}
+
+.detail-contact h3{
+    color:#7ceaff;
+    font-size:18px;
+}
+
+.detail-contact p{
+    color:#c7d4e9;
+    font-size:14px;
+    margin:7px 0;
+}
+
+.footer{
+    text-align:center;
+    padding:23px 12px;
+    color:#8f9bb7;
+    font-size:12px;
+    line-height:2;
+    border-top:1px solid #293453;
+    margin-top:25px;
+}
+
+.footer strong{
+    color:#72e7ff;
+}
+
+@media(min-width:561px){
+    .app{
+        box-shadow:0 0 50px #0008;
+        border-left:1px solid #293453;
+        border-right:1px solid #293453;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="app">
+
+<header class="topbar">
+    <div class="brand">✦ LIMON DIGITAL</div>
+    <div class="menu-tag">DIGITAL SERVICES</div>
+</header>
+
+<!-- HOME PAGE -->
+
+<main id="homePage" class="page active">
+
+    <section class="hero">
+        <div class="welcome">WELCOME TO MY WEBSITE</div>
+        <h1>𝐋𝐈𝐌𝐎𝐍<br>𝐃𝐈𝐆𝐈𝐓𝐀𝐋 𝐒𝐄𝐑𝐕𝐈𝐂𝐄</h1>
+        <p>
+        স্বাগতম আমার ব্যক্তিগত বিজনেস ওয়েবসাইটে।
+        এখানে আপনি আমার বিভিন্ন ডিজিটাল সার্ভিস সম্পর্কে
+        জানতে পারবেন এবং সরাসরি যোগাযোগ করতে পারবেন।
+        </p>
+    </section>
+
+    <h2 class="section-title">👤 আমার সম্পর্কে বিস্তারিত</h2>
+
+    <section class="about">
+        আসসালামু আলাইকুম।<br>
+        আমার নাম <strong>মোঃ লিমন ইসলাম।</strong>
+        আমার বাসা বাগেরহাট। এটি আমার ব্যক্তিগত বিজনেস ওয়েবসাইট।
+        এই ওয়েবসাইটের মাধ্যমে আপনি আমার কাছ থেকে
+        বিভিন্ন ধরনের ডিজিটাল সেবা গ্রহণ করতে পারবেন।
+        <br><br>
+        আমি চেষ্টা করি স্বল্প খরচে মানসম্মত ডিজিটাল
+        সার্ভিস ও প্রয়োজনীয় সহযোগিতা প্রদান করতে।
+        আপনার প্রয়োজন অনুযায়ী সেবা সম্পর্কে জানতে
+        যেকোনো সময় যোগাযোগ করতে পারেন।
+    </section>
+
+    <h2 class="section-title">💎 আমার সার্ভিসসমূহ</h2>
+
+    <div class="services">
+
+        <button class="service-btn" onclick="openService('website')">
+            <span class="service-icon">🌐</span>
+            <span>ওয়েবসাইট তৈরি করুন</span>
+        </button>
+
+        <button class="service-btn" onclick="openService('capcut')">
+            <span class="service-icon">🎬</span>
+            <span>ক্যাপকাট এডিট শিখুন</span>
+        </button>
+
+        <button class="service-btn" onclick="openService('graphics')">
+            <span class="service-icon">🎨</span>
+            <span>গ্রাফিক্স ডিজাইন শিখুন</span>
+        </button>
+
+        <button class="service-btn" onclick="openService('facebook')">
+            <span class="service-icon">📘</span>
+            <span>ফেসবুক পেজ সেটআপ করুন</span>
+        </button>
+
+        <button class="service-btn" onclick="openService('logo')">
+            <span class="service-icon">🖼️</span>
+            <span>লোগো বা কভার ফটো তৈরি করুন</span>
+        </button>
+
+        <button class="service-btn" onclick="openService('stars')">
+            <span class="service-icon">⭐</span>
+            <span>ফেসবুক স্টার সেটআপ</span>
+        </button>
+
+        <button class="service-btn" onclick="openService('promo')">
+            <span class="service-icon">📢</span>
+            <span>প্রমোট ভিডিও তৈরি করুন</span>
+        </button>
+
+        <button class="service-btn" onclick="openService('ai')">
+            <span class="service-icon">🤖</span>
+            <span>এআই ভিডিও তৈরি শিখুন</span>
+        </button>
+
+        <button class="service-btn" onclick="openService('earning')">
+            <span class="service-icon">💰</span>
+            <span>অনলাইন থেকে আয় করুন</span>
+        </button>
+
+    </div>
+
+    <section class="contact">
+        <h2>CONTACT ME</h2>
+        <h3>যোগাযোগ করুন</h3>
+        <p>
+        আপনার প্রয়োজনীয় সার্ভিস গ্রহণ করতে অথবা
+        বিস্তারিত জানতে সরাসরি যোগাযোগ করুন।
+        আপনার যেকোনো প্রশ্নের উত্তর দিতে আমি প্রস্তুত।
+        </p>
+
+        <a class="action-btn whatsapp"
+        href="https://wa.me/8801606871929"
+        target="_blank">
+        ☎ WhatsApp এ যোগাযোগ করুন
+        </a>
+
+        <a class="action-btn facebook"
+        href="https://www.facebook.com/profile.php?id=61594111783029"
+        target="_blank">
+        f Facebook Page
+        </a>
+    </section>
+
+    <footer class="footer">
+        © 2026 <strong>LIMON DIGITAL SERVICE</strong><br>
+        All Rights Reserved.<br>
+        Designed with ❤️ by Limon Islam
+    </footer>
+
+</main>
+
+
+<!-- SERVICE DETAILS PAGE -->
+
+<section id="detailPage" class="page">
+
+    <button class="back-btn" onclick="goHome()">
+        ← হোমপেজে ফিরে যান
+    </button>
+
+    <div class="detail-heading">
+        <div class="detail-icon" id="detailIcon">🌐</div>
+        <h2 id="detailTitle">সার্ভিসের নাম</h2>
+        <p>LIMON DIGITAL SERVICE</p>
+    </div>
+
+    <div class="detail-content" id="detailContent">
+    </div>
+
+    <div class="detail-contact">
+        <h3>📞 সার্ভিসটি নিতে চান?</h3>
+        <p>
+        বিস্তারিত জানতে অথবা আপনার প্রয়োজন অনুযায়ী
+        সার্ভিস অর্ডার করতে WhatsApp-এ যোগাযোগ করুন।
+        </p>
+
+        <a id="serviceWhatsApp"
+        class="action-btn whatsapp"
+        href="https://wa.me/8801606871929"
+        target="_blank">
+        ☎ WhatsApp এ যোগাযোগ করুন
+        </a>
+    </div>
+
+    <button class="back-btn" style="margin-top:18px"
+    onclick="goHome()">
+        ← আবার হোমপেজে ফিরে যান
+    </button>
+
+    <footer class="footer">
+        <strong>LIMON DIGITAL SERVICE</strong><br>
+        Your Digital Partner.
+    </footer>
+
+</section>
+
+</div>
+
+
+<script>
+
+// WHATSAPP NUMBER
+const whatsappNumber = "8801606871929";
+
+// ALL SERVICE DETAILS
+const services = {
+
+website:{
+icon:"🌐",
+title:"ওয়েবসাইট তৈরি করুন",
+description:`
+<h3>আপনার নিজের ওয়েবসাইট তৈরি করতে চান?</h3>
+
+আপনি বর্তমানে যে ওয়েবসাইটে আছেন,
+হুবহু এরকম সুন্দর ওয়েবসাইট আমরা তৈরি করি
+এবং সেল করে থাকি।
+
+এছাড়াও আপনার প্রয়োজন অনুযায়ী বিভিন্ন ধরনের
+ওয়েবসাইট স্বল্প মূল্যে তৈরি করে দেওয়া হয়।
+
+<h3>আমাদের ওয়েবসাইট সার্ভিস</h3>
+<ul>
+<li>পার্সোনাল পোর্টফোলিও ওয়েবসাইট</li>
+<li>বিজনেস ওয়েবসাইট</li>
+<li>ডিজিটাল সার্ভিস ওয়েবসাইট</li>
+<li>প্রমোশনাল ওয়েবসাইট</li>
+<li>ব্যক্তিগত ওয়েবসাইট</li>
+<li>অন্যান্য কাস্টম ওয়েবসাইট</li>
+</ul>
+
+<h3>নমুনা ওয়েবসাইট</h3>
+
+<a class="sample-link" href="https://lsearning.github.io/ls-earning-demo/" target="_blank">
+🔗 L.S EARNING DEMO
+</a>
+
+<a class="sample-link" href="https://lt092026lt09-cell.github.io/limon-portfolio/" target="_blank">
+🔗 LIMON PORTFOLIO
+</a>
+
+<div class="info-box">
+আপনি আপনার পছন্দ অনুযায়ী আমাদের কাছ থেকে
+ওয়েবসাইট তৈরি করে নিতে পারবেন।
+ওয়েবসাইটের ডিজাইন ও কাজের ধরন অনুযায়ী
+মূল্য নির্ধারণ করা হবে।
+</div>
+`
+},
+
+capcut:{
+icon:"🎬",
+title:"ক্যাপকাট ভিডিও এডিটিং শিখুন",
+description:`
+<h3>ভিডিও এডিটিং শিখতে চান?</h3>
+
+আমাদের কাছ থেকে বিভিন্ন ধরনের ক্যাপকাট
+(CapCut) ভিডিও এডিটিং শিখতে পারবেন।
+একদম প্রাথমিক ধারণা থেকে শুরু করে
+ভিডিও এডিটিংয়ের বিভিন্ন কৌশল সম্পর্কে
+শেখার সুযোগ পাবেন।
+
+<h3>যেসব এডিটিং শিখতে পারবেন</h3>
+<ul>
+<li>ভয়েস ভিডিও এডিটিং</li>
+<li>টিকটক ভিডিও এডিটিং</li>
+<li>YouTube ভিডিও এডিটিং</li>
+<li>ডায়লগ ভিডিও এডিটিং</li>
+<li>ছন্দ ভিডিও এডিটিং</li>
+<li>ট্রানজিশন ও ইফেক্ট ব্যবহার</li>
+<li>টেক্সট ও ক্যাপশন এডিটিং</li>
+<li>ভিডিও কালার ও সাউন্ড এডিটিং</li>
+</ul>
+
+<h3>কেন শিখবেন?</h3>
+নিজের ভিডিও নিজেই সুন্দরভাবে এডিট করতে পারবেন।
+সোশ্যাল মিডিয়ার জন্য আকর্ষণীয় ভিডিও তৈরি
+করার দক্ষতা অর্জন করতে পারবেন।
+
+<div class="info-box">
+এছাড়াও বিভিন্ন ধরনের ক্যাপকাট টেমপ্লেট,
+ইফেক্ট ও এডিটিং কৌশল সম্পর্কে সহযোগিতা
+পেতে যোগাযোগ করুন।
+</div>
+`
+},
+
+graphics:{
+icon:"🎨",
+title:"গ্রাফিক্স ডিজাইন শিখুন",
+description:`
+<h3>নিজেই ডিজাইন তৈরি করতে চান?</h3>
+
+গ্রাফিক্স ডিজাইনের প্রাথমিক বিষয়গুলো
+থেকে শুরু করে বিভিন্ন ধরনের ডিজাইন
+তৈরি করার কৌশল শিখতে পারবেন।
+
+<h3>যেসব ডিজাইন শিখতে পারবেন</h3>
+<ul>
+<li>সোশ্যাল মিডিয়া পোস্ট ডিজাইন</li>
+<li>ফেসবুক পোস্টার ডিজাইন</li>
+<li>ব্যানার ও বিজ্ঞাপন ডিজাইন</li>
+<li>থাম্বনেইল ডিজাইন</li>
+<li>বিজনেস কার্ড ডিজাইন</li>
+<li>টেক্সট ও টাইপোগ্রাফি ডিজাইন</li>
+<li>বিভিন্ন ধরনের ক্রিয়েটিভ ডিজাইন</li>
+</ul>
+
+<h3>আপনার সুবিধা</h3>
+নিজের পেজ বা ব্যবসার জন্য প্রয়োজনীয়
+ডিজাইন তৈরি করার দক্ষতা অর্জন করতে পারবেন।
+
+<div class="info-box">
+শেখার জন্য বিস্তারিত জানতে WhatsApp-এ যোগাযোগ করুন।
+</div>
+`
+},
+
+facebook:{
+icon:"📘",
+title:"ফেসবুক পেজ সেটআপ করুন",
+description:`
+<h3>আপনার একটি প্রফেশনাল ফেসবুক পেজ প্রয়োজন?</h3>
+
+আপনার ব্যবসা, ব্যক্তিগত ব্র্যান্ড অথবা
+কনটেন্ট ক্রিয়েশনের জন্য একটি সুন্দর
+ফেসবুক পেজ তৈরি ও সাজিয়ে দেওয়ার
+সেবা গ্রহণ করতে পারবেন।
+
+<h3>আমাদের পেজ সেটআপ সার্ভিস</h3>
+<ul>
+<li>নতুন ফেসবুক পেজ তৈরি</li>
+<li>পেজের নাম ও ইউজারনেম নির্বাচন</li>
+<li>প্রফেশনাল বায়ো তৈরি</li>
+<li>সঠিক ক্যাটাগরি নির্বাচন</li>
+<li>প্রোফাইল ও কভার ফটো সেটআপ</li>
+<li>প্রয়োজনীয় পেজ সেটিংস</li>
+<li>পেজ পরিচালনার প্রাথমিক নির্দেশনা</li>
+</ul>
+
+<h3>কারা এই সেবা নিতে পারবেন?</h3>
+যারা নতুন ব্যবসা শুরু করছেন অথবা
+নিজের কনটেন্টের জন্য নতুন ফেসবুক
+পেজ তৈরি করতে চান।
+
+<div class="info-box">
+আপনার পছন্দের নাম দিয়ে সুন্দর একটি
+ফেসবুক পেজ তৈরি করতে যোগাযোগ করুন।
+</div>
+`
+},
+
+logo:{
+icon:"🖼️",
+title:"লোগো ও কভার ফটো তৈরি",
+description:`
+<h3>আপনার ব্র্যান্ডের জন্য সুন্দর ডিজাইন চান?</h3>
+
+আপনার ফেসবুক পেজ, ব্যবসা অথবা
+ব্যক্তিগত ব্র্যান্ডের জন্য আকর্ষণীয়
+লোগো ও কভার ফটো তৈরি করে দেওয়া হয়।
+
+<h3>যেসব ডিজাইন পাবেন</h3>
+<ul>
+<li>প্রফেশনাল লোগো ডিজাইন</li>
+<li>ফেসবুক প্রোফাইল ডিজাইন</li>
+<li>ফেসবুক কভার ফটো</li>
+<li>YouTube চ্যানেল ব্যানার</li>
+<li>সোশ্যাল মিডিয়া পোস্টার</li>
+<li>বিজনেস ব্র্যান্ডিং ডিজাইন</li>
+</ul>
+
+<h3>আপনার পছন্দ অনুযায়ী ডিজাইন</h3>
+আপনার ব্র্যান্ডের নাম, পছন্দের রং
+এবং ডিজাইনের ধারণা অনুযায়ী
+কাস্টম ডিজাইন তৈরি করা হবে।
+
+<div class="info-box">
+আপনার ডিজাইনের প্রয়োজনীয়তা জানিয়ে
+WhatsApp-এ যোগাযোগ করুন।
+</div>
+`
+},
+
+stars:{
+icon:"⭐",
+title:"ফেসবুক স্টার সেটআপ",
+description:`
+<h3>Facebook Stars সম্পর্কে জানতে চান?</h3>
+
+ফেসবুক স্টার হলো কনটেন্ট নির্মাতাদের
+জন্য একটি সাপোর্ট ফিচার। দর্শকরা
+যোগ্য নির্মাতাদের কনটেন্টে Stars পাঠিয়ে
+তাদের সমর্থন করতে পারেন।
+
+<h3>আমাদের সহযোগিতা</h3>
+<ul>
+<li>Facebook Stars সম্পর্কে ধারণা</li>
+<li>যোগ্যতার শর্ত বুঝতে সহযোগিতা</li>
+<li>Stars ফিচারের সেটিংস সম্পর্কে নির্দেশনা</li>
+<li>Stars ব্যবহারের নিয়ম শেখানো</li>
+<li>পেমেন্ট ও পেআউট সম্পর্কে প্রাথমিক ধারণা</li>
+</ul>
+
+<h3>গুরুত্বপূর্ণ তথ্য</h3>
+Facebook-এর নিজস্ব যোগ্যতা, বয়স,
+দেশ ও অন্যান্য নীতিমালা অনুযায়ী
+Stars এবং পেআউট সুবিধা পাওয়া যায়।
+
+<div class="info-box">
+কোনো মনিটাইজেশন বা আয়ের নিশ্চয়তা দেওয়া হয় না।
+সবকিছু Facebook-এর বর্তমান নিয়ম ও যোগ্যতার ওপর নির্ভরশীল।
+</div>
+`
+},
+
+promo:{
+icon:"📢",
+title:"প্রমোট ভিডিও তৈরি করুন",
+description:`
+<h3>আপনার ব্যবসা বা পেজের প্রচার করতে চান?</h3>
+
+আপনার ফেসবুক পেজ, ব্যবসা অথবা
+ডিজিটাল সার্ভিসের পরিচিতি বাড়ানোর জন্য
+সুন্দর প্রমোশনাল ভিডিও তৈরি করে দেওয়া হয়।
+
+<h3>আমাদের ভিডিও সার্ভিস</h3>
+<ul>
+<li>বিজনেস প্রমোশন ভিডিও</li>
+<li>ফেসবুক পেজ প্রমোশন ভিডিও</li>
+<li>সার্ভিস পরিচিতিমূলক ভিডিও</li>
+<li>ছবি দিয়ে প্রমোশনাল ভিডিও</li>
+<li>টেক্সট ও অ্যানিমেশন ভিডিও</li>
+<li>সোশ্যাল মিডিয়া বিজ্ঞাপনের ভিডিও</li>
+</ul>
+
+<h3>আপনার সুবিধা</h3>
+আপনার পেজ বা ব্যবসার তথ্য অনুযায়ী
+ভিডিওর বিষয়বস্তু ও ডিজাইন সাজানো হবে।
+
+<div class="info-box">
+আপনার পেজ বা ব্যবসার তথ্য পাঠিয়ে
+প্রমোশনাল ভিডিও সম্পর্কে বিস্তারিত জানুন।
+</div>
+`
+},
+
+ai:{
+icon:"🤖",
+title:"এআই ভিডিও তৈরি শিখুন",
+description:`
+<h3>AI দিয়ে ভিডিও তৈরি করতে চান?</h3>
+
+বর্তমান সময়ে কৃত্রিম বুদ্ধিমত্তা বা
+Artificial Intelligence ব্যবহার করে
+বিভিন্ন ধরনের আকর্ষণীয় ভিডিও তৈরি করা যায়।
+
+আমাদের কাছ থেকে AI ভিডিও তৈরির
+প্রাথমিক ধারণা ও বিভিন্ন কৌশল শিখতে পারবেন।
+
+<h3>যেসব বিষয় শিখতে পারবেন</h3>
+<ul>
+<li>AI ভিডিও তৈরির প্রাথমিক ধারণা</li>
+<li>টেক্সট থেকে ভিডিও তৈরির কৌশল</li>
+<li>ছবি থেকে ভিডিও তৈরি</li>
+<li>AI দিয়ে ভিডিওর দৃশ্য তৈরি</li>
+<li>ভিডিওর জন্য প্রম্পট লেখা</li>
+<li>AI ভিডিও এডিটিং</li>
+<li>সোশ্যাল মিডিয়ার জন্য AI কনটেন্ট</li>
+</ul>
+
+<h3>কেন AI ভিডিও শিখবেন?</h3>
+নিজের কনটেন্টকে আরও সৃজনশীল করতে
+এবং নতুন ধরনের ভিডিও তৈরি করতে
+AI প্রযুক্তি ব্যবহার শিখতে পারবেন।
+
+<div class="info-box">
+AI ভিডিও শেখার বিস্তারিত জানতে যোগাযোগ করুন।
+</div>
+`
+},
+
+earning:{
+icon:"💰",
+title:"অনলাইন থেকে আয় করার ধারণা",
+description:`
+<h3>অনলাইনে কাজ শিখতে আগ্রহী?</h3>
+
+বর্তমানে ইন্টারনেটের মাধ্যমে বিভিন্ন
+ধরনের বৈধ কাজ শেখা ও করার সুযোগ রয়েছে।
+সঠিক দক্ষতা ও অভিজ্ঞতা অর্জনের মাধ্যমে
+নিজের কাজের ক্ষেত্র তৈরি করতে পারেন।
+
+<h3>যেসব বিষয় সম্পর্কে জানতে পারবেন</h3>
+<ul>
+<li>ফ্রিল্যান্সিং সম্পর্কে প্রাথমিক ধারণা</li>
+<li>গ্রাফিক্স ডিজাইন ও ভিডিও এডিটিং</li>
+<li>ডিজিটাল সার্ভিস প্রদান</li>
+<li>সোশ্যাল মিডিয়া ম্যানেজমেন্ট</li>
+<li>কনটেন্ট ক্রিয়েশন</li>
+<li>ওয়েবসাইট তৈরি</li>
+<li>অনলাইন মার্কেটিং</li>
+</ul>
+
+<h3>আমাদের লক্ষ্য</h3>
+আপনাকে বিভিন্ন ডিজিটাল দক্ষতা সম্পর্কে
+ধারণা দেওয়া এবং কাজ শেখার ক্ষেত্রে
+প্রয়োজনীয় প্রাথমিক সহযোগিতা করা।
+
+<div class="info-box">
+মনে রাখবেন, অনলাইনে আয়ের কোনো
+নিশ্চয়তা নেই। কাজ শিখতে হবে,
+দক্ষতা অর্জন করতে হবে এবং প্রতারণামূলক
+অফার থেকে সতর্ক থাকতে হবে।
+</div>
+`
+}
+
+};
+
+
+// OPEN SERVICE PAGE
+
+function openService(id){
+
+    const service = services[id];
+
+    if(!service) return;
+
+    document.getElementById("homePage").classList.remove("active");
+
+    document.getElementById("detailPage").classList.add("active");
+
+    document.getElementById("detailIcon").innerText = service.icon;
+
+    document.getElementById("detailTitle").innerText = service.title;
+
+    document.getElementById("detailContent").innerHTML = service.description;
+
+    const message = "আসসালামু আলাইকুম। আমি আপনার LIMON DIGITAL SERVICE ওয়েবসাইট থেকে এসেছি। আমি '" + service.title + "' সার্ভিসটি সম্পর্কে বিস্তারিত জানতে চাই।";
+
+    document.getElementById("serviceWhatsApp").href =
+    "https://wa.me/" + whatsappNumber + "?text=" + encodeURIComponent(message);
+
+    window.scrollTo({top:0,behavior:"smooth"});
+
+    history.pushState({page:"detail"}, "");
+}
+
+
+// BACK TO HOME
+
+function goHome(){
+
+    document.getElementById("detailPage").classList.remove("active");
+
+    document.getElementById("homePage").classList.add("active");
+
+    window.scrollTo({top:0,behavior:"smooth"});
+
+}
+
+
+// PHONE BACK BUTTON SUPPORT
+
+window.addEventListener("popstate",function(){
+
+    goHome();
+
+});
+
+</script>
+
+</body>
+</html>
